@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lavender Style | Fashion Blog</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --purple: #813eaa;
+      --dark-purple: #54216f;
+      --pink: #ed82bc;
+      --light-pink: #fff0f8;
+      --light-purple: #f6edfc;
+      --text: #44334d;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fffaff;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* NAVBAR */
+    header {
+      background: rgba(255,255,255,0.96);
+      box-shadow: 0 2px 15px #813eaa12;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 17px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 27px;
+      font-weight: 700;
+      color: var(--purple);
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--pink);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--pink);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 490px;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(110deg, #f5e4ff, #ffe4f2);
+      padding: 55px 7%;
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      width: 100%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 35px;
+    }
+
+    .hero-text .tag {
+      display: inline-block;
+      color: var(--purple);
+      background: white;
+      padding: 7px 17px;
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      color: var(--dark-purple);
+      font-size: clamp(38px, 5vw, 65px);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #d957a2;
+    }
+
+    .hero p {
+      font-size: 14px;
+      color: #765d80;
+      max-width: 440px;
+      margin-bottom: 28px;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      background: var(--purple);
+      color: white;
+      padding: 12px 27px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 13px;
+      transition: 0.3s;
+    }
+
+    .hero-btn:hover {
+      background: var(--pink);
+      transform: translateY(-3px);
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 370px;
+      object-fit: cover;
+      border-radius: 48% 48% 15px 15px;
+      border: 8px solid white;
+      box-shadow: 0 15px 35px #813eaa25;
+    }
+
+    /* SECTION */
+    .section {
+      max-width: 1200px;
+      padding: 75px 25px;
+      margin: auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-heading .small-title {
+      color: #d957a2;
+      font-size: 11px;
+      letter-spacing: 3px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      color: var(--dark-purple);
+      margin: 7px 0;
+    }
+
+    .section-heading p {
+      font-size: 13px;
+      color: #897992;
+    }
+
+    /* SEARCH */
+    .search-box {
+      display: flex;
+      justify-content: center;
+      margin: 25px auto;
+      max-width: 430px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 13px 20px;
+      border: 1px solid #e7c9f1;
+      border-radius: 30px;
+      outline: none;
+      font-family: inherit;
+      font-size: 13px;
+      background: white;
+    }
+
+    .search-box input:focus {
+      border-color: var(--purple);
+      box-shadow: 0 0 0 3px #813eaa15;
+    }
+
+    /* FILTER */
+    .filters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 35px;
+    }
+
+    .filter-btn {
+      border: 1px solid #e6c9ef;
+      background: white;
+      color: var(--purple);
+      padding: 9px 21px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 12px;
+      transition: 0.3s;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--purple);
+      color: white;
+    }
+
+    /* BLOG CARDS */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .blog-card {
+      background: white;
+      border-radius: 17px;
+      overflow: hidden;
+      box-shadow: 0 5px 25px #813eaa12;
+      transition: 0.3s;
+      border: 1px solid #f6e9fa;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px #813eaa20;
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 270px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-content {
+      padding: 23px;
+    }
+
+    .category {
+      display: inline-block;
+      background: var(--light-pink);
+      color: #c64a91;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 10px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .card-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 23px;
+      color: var(--dark-purple);
+      line-height: 1.35;
+      margin-bottom: 10px;
+    }
+
+    .card-content p {
+      color: #85758b;
+      font-size: 12px;
+      margin-bottom: 17px;
+    }
+
+    .read-more {
+      border: none;
+      background: none;
+      color: var(--purple);
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .read-more:hover {
+      color: var(--pink);
+    }
+
+    .empty {
+      text-align: center;
+      grid-column: 1 / -1;
+      color: #897992;
+      padding: 35px;
+    }
+
+    /* ABOUT */
+    .about {
+      background: linear-gradient(110deg, #f4e5ff, #ffe8f4);
+      padding: 65px 25px;
+    }
+
+    .about-inner {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      color: var(--dark-purple);
+      margin-bottom: 15px;
+    }
+
+    .about p {
+      color: #765d80;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #54216f;
+      color: white;
+      text-align: center;
+      padding: 28px 15px;
+    }
+
+    footer h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 25px;
+      margin-bottom: 7px;
+    }
+
+    footer p {
+      font-size: 11px;
+      color: #e9d7f2;
+    }
+
+    /* ARTICLE MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 200;
+      inset: 0;
+      background: #25132dbb;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .modal.show {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .modal-content {
+      background: white;
+      width: 100%;
+      max-width: 650px;
+      border-radius: 18px;
+      margin: 30px auto;
+      padding: 30px;
+      position: relative;
+    }
+
+    .modal-content h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--dark-purple);
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .modal-content p {
+      font-size: 13px;
+      color: #68566e;
+      margin: 12px 0;
+      line-height: 1.9;
+    }
+
+    .modal-content img {
+      width: 100%;
+      max-height: 330px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin: 15px 0;
+    }
+
+    .close {
+      position: absolute;
+      top: 12px;
+      right: 20px;
+      border: none;
+      background: none;
+      color: var(--purple);
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .nav-links {
+        gap: 17px;
+      }
+
+      .nav-links a {
+        font-size: 11px;
+      }
+
+      .hero {
+        padding: 45px 22px;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-image img {
+        height: 300px;
+        max-width: 390px;
+      }
+
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .blog-card img {
+        height: 250px;
+      }
+
+      .section {
+        padding: 55px 20px;
+      }
+
+      .section-heading h2 {
+        font-size: 31px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <nav>
+      <div class="logo">Lavender <span>Style.</span></div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#fashion">Fashion</a></li>
+        <li><a href="#beauty">Beauty</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <span class="tag">WELCOME TO MY FASHION BLOG</span>
+        <h1>Wear Your <span>Dreams</span>, Own Your Style.</h1>
+        <p>
+          Temukan inspirasi fashion, tips berpakaian,
+          dan tren terbaru untuk tampil percaya diri
+          setiap hari.
+        </p>
+        <a href="#fashion" class="hero-btn">Explore Fashion →</a>
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=900"
+          alt="Inspirasi gaya fashion">
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <main class="section" id="fashion">
+    <div class="section-heading">
+      <span class="small-title">OUR FASHION JOURNAL</span>
+      <h2>Latest Articles</h2>
+      <p>Inspirasi gaya untuk membuat harimu lebih berwarna.</p>
+    </div>
+
+    <!-- SEARCH -->
+    <div class="search-box">
+      <input
+        type="search"
+        id="searchInput"
+        placeholder="Cari artikel fashion..."
+        aria-label="Cari artikel">
+    </div>
+
+    <!-- CATEGORY FILTER -->
+    <div class="filters">
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="Fashion">Fashion</button>
+      <button class="filter-btn" data-category="Beauty">Beauty</button>
+      <button class="filter-btn" data-category="Lifestyle">Lifestyle</button>
+    </div>
+
+    <!-- BLOG POSTS -->
+    <div class="blog-grid" id="blogGrid"></div>
+  </main>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <span class="small-title">GET TO KNOW US</span>
+      <h2>About Lavender Style</h2>
+      <p>
+        Lavender Style adalah blog fashion yang membahas
+        inspirasi berpakaian, tren fashion, kecantikan,
+        dan gaya hidup. Blog ini dibuat untuk membantu
+        pembaca menemukan gaya yang sesuai dengan
+        kepribadian mereka. Kami percaya bahwa setiap
+        orang memiliki keunikan dan gaya tersendiri.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="beauty">
+    <h3>Lavender Style.</h3>
+    <p>Fashion • Beauty • Lifestyle</p>
+    <p>© 2026 Lavender Style. All Rights Reserved.</p>
+  </footer>
+
+  <!-- ARTICLE MODAL -->
+  <div class="modal" id="articleModal">
+    <div class="modal-content">
+      <button class="close" id="closeModal" aria-label="Tutup">&times;</button>
+      <div id="articleDetail"></div>
+    </div>
+  </div>
+
+  <script>
+    // DATA ARTIKEL
+    const articles = [
+      {
+        title: "5 Tips Mix and Match Outfit untuk Tampil Stylish",
+        category: "Fashion",
+        image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=900",
+        description: "Tips memadukan pakaian agar terlihat modis dan tetap nyaman.",
+        content: `
+          <p>Berpenampilan menarik tidak selalu harus membeli
+          pakaian baru. Kamu bisa memanfaatkan pakaian yang
+          sudah ada dengan memadukannya secara kreatif.</p>
+          <p><b>1. Pilih warna yang serasi.</b> Gunakan warna
+          yang saling melengkapi, seperti ungu muda dan putih.</p>
+          <p><b>2. Gunakan pakaian basic.</b> Kaos polos,
+          celana jeans, dan kemeja dapat menjadi pilihan
+          untuk berbagai kesempatan.</p>
+          <p><b>3. Tambahkan aksesori.</b> Tas, jam tangan,
+          atau kalung dapat mempercantik penampilan.</p>
+          <p><b>4. Sesuaikan dengan acara.</b> Pilih pakaian
+          yang cocok untuk kegiatan sehari-hari maupun acara
+          formal.</p>
+          <p><b>5. Utamakan kenyamanan.</b> Gunakan pakaian
+          yang membuatmu merasa percaya diri.</p>
+        `
+      },
+      {
+        title: "Tren Fashion Warna Pastel yang Elegan",
+        category: "Fashion",
+        image: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=900",
+        description: "Kenali gaya berpakaian pastel yang lembut dan feminin.",
+        content: `
+          <p>Warna pastel seperti lavender, baby pink,
+          dan mint memberikan kesan lembut serta elegan.
+          Warna ini dapat digunakan untuk berbagai kegiatan.</p>
+          <p>Untuk tampilan sehari-hari, kamu dapat
+          memadukan atasan pastel dengan celana putih.
+          Tambahkan tas kecil dan sepatu yang senada.</p>
+          <p>Jika ingin tampil lebih formal, pilih blazer
+          pastel dengan celana bahan. Perpaduan ini
+          memberikan kesan rapi dan tetap modis.</p>
+          <p>Jangan takut bereksperimen dengan warna.
+          Pilih kombinasi yang membuatmu nyaman dan percaya diri.</p>
+        `
+      },
+      {
+        title: "Simple Makeup untuk Aktivitas Sehari-hari",
+        category: "Beauty",
+        image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=900",
+        description: "Inspirasi riasan sederhana untuk tampil segar setiap hari.",
+        content: `
+          <p>Riasan sederhana cocok untuk aktivitas sehari-hari.
+          Kamu tidak perlu menggunakan banyak produk untuk
+          mendapatkan tampilan yang segar.</p>
+          <p>Mulailah dengan membersihkan wajah dan
+          menggunakan pelembap serta tabir surya.</p>
+          <p>Selanjutnya, gunakan bedak tipis, sedikit
+          blush, dan lip tint sesuai warna yang kamu sukai.</p>
+          <p>Sesuaikan riasan dengan kebutuhan dan pastikan
+          produk yang digunakan cocok untuk kulitmu.</p>
+        `
+      },
+      {
+        title: "Cara Membangun Personal Style yang Unik",
+        category: "Lifestyle",
+        image: "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=900",
+        description: "Temukan gaya pribadi yang sesuai dengan kepribadianmu.",
+        content: `
+          <p>Personal style adalah cara seseorang
+          mengekspresikan dirinya melalui pakaian dan aksesori.</p>
+          <p>Langkah pertama adalah mencari inspirasi dari
+          majalah, blog, atau media sosial. Simpan gaya
+          yang paling kamu sukai.</p>
+          <p>Kemudian, perhatikan warna, model pakaian,
+          dan aksesori yang sering kamu pilih. Hal ini
+          dapat membantumu menemukan ciri khas.</p>
+          <p>Jangan merasa harus selalu mengikuti tren.
+          Pilih pakaian yang sesuai dengan kepribadian,
+          kebutuhan, dan kenyamananmu.</p>
+        `
+      }
+    ];
+
+    const grid = document.getElementById("blogGrid");
+    const searchInput = document.getElementById("searchInput");
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const modal = document.getElementById("articleModal");
+    const articleDetail = document.getElementById("articleDetail");
+    const closeModal = document.getElementById("closeModal");
+
+    let activeCategory = "all";
+
+    // TAMPILKAN ARTIKEL
+    function renderArticles() {
+      const keyword = searchInput.value.toLowerCase();
+
+      const filtered = articles.filter(article => {
+        const matchCategory =
+          activeCategory === "all" ||
+          article.category === activeCategory;
+
+        const matchSearch =
+          article.title.toLowerCase().includes(keyword) ||
+          article.description.toLowerCase().includes(keyword) ||
+          article.category.toLowerCase().includes(keyword);
+
+        return matchCategory && matchSearch;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML =
+          '<p class="empty">Artikel tidak ditemukan.</p>';
+        return;
+      }
+
+      grid.innerHTML = filtered.map(article => {
+        const index = articles.indexOf(article);
+
+        return `
+          <article class="blog-card">
+            <img src="${article.image}" alt="${article.title}"
+                 loading="lazy">
+            <div class="card-content">
+              <span class="category">${article.category}</span>
+              <h3>${article.title}</h3>
+              <p>${article.description}</p>
+              <button class="read-more" data-index="${index}">
+                Baca Selengkapnya →
+              </button>
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      document.querySelectorAll(".read-more").forEach(button => {
+        button.addEventListener("click", () => {
+          showArticle(Number(button.dataset.index));
+        });
+      });
+    }
+
+    // FILTER KATEGORI
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        activeCategory = button.dataset.category;
+
+        filterButtons.forEach(btn =>
+          btn.classList.remove("active")
+        );
+
+        button.classList.add("active");
+        renderArticles();
+      });
+    });
+
+    // PENCARIAN
+    searchInput.addEventListener("input", renderArticles);
+
+    // BUKA ARTIKEL
+    function showArticle(index) {
+      const article = articles[index];
+
+      articleDetail.innerHTML = `
+        <span class="category">${article.category}</span>
+        <h2>${article.title}</h2>
+        <img src="${article.image}" alt="${article.title}">
+        ${article.content}
+      `;
+
+      modal.classList.add("show");
+      document.body.style.overflow = "hidden";
+    }
+
+    // TUTUP ARTIKEL
+    function hideArticle() {
+      modal.classList.remove("show");
+      document.body.style.overflow = "";
+    }
+
+    closeModal.addEventListener("click", hideArticle);
+
+    modal.addEventListener("click", event => {
+      if (event.target === modal) hideArticle();
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") hideArticle();
+    });
+
+    // TAMPILKAN SEMUA ARTIKEL
+    renderArticles();
+  </script>
+
+</body>
+</html>
